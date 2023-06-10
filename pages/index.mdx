@@ -15,12 +15,11 @@ export const red_flags = ["looking for a code ninja", "looking for a 10x develop
   <form action="/api/form" method="post">
     I want a job in:
 
-    <TextField id="city" label="City" />
+    <TextField label="City" name="city" />
 
     I don't want to work in those:
     <Autocomplete
       multiple
-      id="tags-standard"
       options={categories}
       renderInput={(params) => (
         <TextField
@@ -28,6 +27,7 @@ export const red_flags = ["looking for a code ninja", "looking for a 10x develop
           variant="standard"
           label="categories"
           placeholder="Categories"
+          name="categories"
         />
       )}
     />
@@ -37,23 +37,22 @@ export const red_flags = ["looking for a code ninja", "looking for a 10x develop
 
     <Autocomplete
       disablePortal
-      id="combo-box-demo"
+      name="revenue"
       options={revenue_ranges}
       sx={{ width: 300 }}
-      renderInput={(params) => <TextField {...params} label="revenue" />}
+      renderInput={(params) => <TextField {...params} label="revenue" name="revenue_range" />}
     />
 
     I don't want you to show up if your job offer contains those:
     <Autocomplete
       multiple
-      id="tags-standard"
       options={red_flags}
       renderInput={(params) => (
         <TextField
           {...params}
           variant="standard"
-          label="red flags"
           placeholder="Red Flags"
+          name="red_flags"
         />
       )}
     />

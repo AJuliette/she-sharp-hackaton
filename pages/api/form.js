@@ -7,14 +7,15 @@ export default function handler(req, res) {
     console.log('CITY')
     console.log(body)
 
+
     // Guard clause checks for first and last name,
     // and returns early if they are not found
     if (!body.city) {
         // Sends a HTTP bad request error code
-        return res.status(400).json({ data: 'City not found' })
+        return res.status(400).json({ data: 'Data not found' })
     }
 
     // Found the name.
     // Sends a HTTP success code
-    res.status(200).json({ data: `${body.city}` })
+    res.status(200).json({ data: `${body.city} ${body.categories} ${body.revenue_range} ${body.red_flags}` })
 }
